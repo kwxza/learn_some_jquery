@@ -1,0 +1,21 @@
+https://www.smashingmagazine.com/2014/05/mystery-jquery-object-syntax-basic-introduction/
+
+https://howtodoinjava.com/jquery/javascript-dom-objects-vs-jquery-objects/
+
+https://developer.mozilla.org/en-US/docs/Glossary/jQuery
+
+https://learn.jquery.com/using-jquery-core/
+
+https://learn.jquery.com/about-jquery/how-jquery-works/
+
+https://api.jquery.com/jquery/#jQuery-object
+
+https://en.wikipedia.org/wiki/JQuery
+
+jQuery Data Types: 
+https://api.jquery.com/Types/
+
+jQuery Selectors:
+https://api.jquery.com/category/selectors/
+
+jQuery function: https://api.jquery.com/jQuery/
