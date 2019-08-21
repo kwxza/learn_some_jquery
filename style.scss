@@ -3,12 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  --main-font: 'Open Sans', Helvetica, Arial, sans serif;
-  --heading-font: 'Titillium Web', Tahoma, sans serif;
-  --dark-color: #333;
-  --light-color: #f0f0f0;
-  --brand-dark-color: #0769ad;
-  --brand-light-color: #7acef4;
   color: inherit;
   background-color: inherit;
 
@@ -19,6 +13,15 @@
   }
 }
 
+:root {
+  --main-font: 'Open Sans', Helvetica, Arial, sans serif;
+  --heading-font: 'Titillium Web', Tahoma, sans serif;
+  --dark-color: #333;
+  --light-color: #f0f0f0;
+  --brand-dark-color: #0769ad;
+  --brand-light-color: #7acef4;
+}
+
 body {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
@@ -27,7 +30,9 @@ body {
   font-family: var(--main-font);
   --brand-color: var(--brand-dark-color);
 
-  header > h1 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--heading-font);
     letter-spacing: 0.08rem;
   }
@@ -259,15 +264,28 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
 
-  h1 {
+  header > h1 {
     border-bottom: 2px solid var(--brand-color);
   }
 
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+
+  a {
+    color: var(--brand-color);
+  }
+
   p {
-    margin: 0.5rem 0;
+    margin: 0.65rem 0;
     letter-spacing: 0.07rem;
     font-size: 1.05rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
   }
 
   ol,
@@ -280,9 +298,14 @@ body {
   }
 
   li {
-    margin: 0.3rem 0;
+    padding: 0.65rem 0;
     letter-spacing: 0.07rem;
     font-size: 1.05rem;
+    line-height: 1.8rem;
+  }
+
+  h2 + ul li {
+    padding: 1.3rem 0;
   }
 
   pre {
@@ -296,17 +319,24 @@ body {
     transition: background-color 0.4s ease-in;
     border: 1px solid var(--brand-color);
     border-left: 5px solid var(--brand-color);
-    margin: 0.5rem 0;
+    margin: 2rem 0.5rem;
     color: var(--brand-color);
     letter-spacing: 0.1rem;
     line-height: 1.6rem;
     font-size: 1.15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .code-inline {
     @extend .code-block;
+    border: none;
     margin: 0;
-    padding: 0.1rem 0.5rem;
+    padding: 0 0.5rem;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
 }
 

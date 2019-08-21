@@ -19,3 +19,13 @@ jQuery Selectors:
 https://api.jquery.com/category/selectors/
 
 jQuery function: https://api.jquery.com/jQuery/
+
+Samples of jQuery code vs JavaScript:
+https://medium.com/@mattburgess/in-defence-of-jquery-4a8b20f4696b
+www.youmightnotneedjquery.com
+
+***Add jQuery vs JavaScript section?
+***Add jQuery Data Types section?
+
+***Style tooltips by using data-* attribute and CSS?
+    --> https://stackoverflow.com/questions/2011142/how-to-change-the-style-of-the-title-attribute-inside-an-anchor-tag

@@ -3,12 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  --main-font: "Open Sans", Helvetica, Arial, sans serif;
-  --heading-font: "Titillium Web", Tahoma, sans serif;
-  --dark-color: #333;
-  --light-color: #f0f0f0;
-  --brand-dark-color: #0769ad;
-  --brand-light-color: #7acef4;
   color: inherit;
   background-color: inherit;
 }
@@ -16,6 +10,15 @@
 * :active {
   outline: none;
   background: inherit;
+}
+
+:root {
+  --main-font: "Open Sans", Helvetica, Arial, sans serif;
+  --heading-font: "Titillium Web", Tahoma, sans serif;
+  --dark-color: #333;
+  --light-color: #f0f0f0;
+  --brand-dark-color: #0769ad;
+  --brand-light-color: #7acef4;
 }
 
 body {
@@ -26,7 +29,9 @@ body {
   font-family: var(--main-font);
   --brand-color: var(--brand-dark-color);
 }
-body header > h1 {
+body h1,
+body h2,
+body h3 {
   font-family: var(--heading-font);
   letter-spacing: 0.08rem;
 }
@@ -222,14 +227,24 @@ body code {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.main-section h1 {
+.main-section header > h1 {
   border-bottom: 2px solid var(--brand-color);
 }
+.main-section h2 {
+  font-size: 1.25rem;
+}
+.main-section h3 {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+.main-section a {
+  color: var(--brand-color);
+}
 .main-section p {
-  margin: 0.5rem 0;
+  margin: 0.65rem 0;
   letter-spacing: 0.07rem;
   font-size: 1.05rem;
-  line-height: 1.6rem;
+  line-height: 1.8rem;
 }
 .main-section ol,
 .main-section ul {
@@ -239,9 +254,13 @@ body code {
   list-style-type: lower-alpha;
 }
 .main-section li {
-  margin: 0.3rem 0;
+  padding: 0.65rem 0;
   letter-spacing: 0.07rem;
   font-size: 1.05rem;
+  line-height: 1.8rem;
+}
+.main-section h2 + ul li {
+  padding: 1.3rem 0;
 }
 .main-section pre {
   margin-top: 1rem;
@@ -253,15 +272,22 @@ body code {
   transition: background-color 0.4s ease-in;
   border: 1px solid var(--brand-color);
   border-left: 5px solid var(--brand-color);
-  margin: 0.5rem 0;
+  margin: 2rem 0.5rem;
   color: var(--brand-color);
   letter-spacing: 0.1rem;
   line-height: 1.6rem;
   font-size: 1.15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .main-section .code-inline {
+  border: none;
   margin: 0;
-  padding: 0.1rem 0.5rem;
+  padding: 0 0.5rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 footer {

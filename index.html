@@ -8,14 +8,14 @@
       name="Description"
       content="title: An Intro to jQuery, Author: kpsiDev"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web&display=swap"
       rel="stylesheet"
     />
-    <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
     <script defer src="https://kit.fontawesome.com/29220c0747.js"></script>
     <script defer src="main.js" defer></script>
+    <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
     <title>FCC Technical Documentation Page</title>
   </head>
   <body>
@@ -30,7 +30,7 @@
             aria-hidden="true"
           ></i>
         </button>
-        <header id="menu-header"><h1>An Intro to jQuery</h1></header>
+        <header id="menu-header"><h1>Learn Some jQuery</h1></header>
         <button id="theme-toggle" type="button" aria-label="theme toggle">
           <i id="theme-icon" class="fas fa-sun" aria-hidden="true"></i>
           <span>&nbsp</span>
@@ -87,48 +87,34 @@
         <header>
           <h1>Welcome!</h1>
         </header>
-        <p>Welcome to my jQuery guide!</p>
         <p>
-          I'm kpsiDev and I created this guide as both a learning exercise for
-          myself and a project for the
-          <a
-            href="https://learn.freecodecamp.org/"
-            title="FreeCodeCamp is a nonprofit organization that teaches web development online for free!"
-            target="_blank"
-            rel="noreferrer"
-            >FreeCodeCamp</a
-          >
-          curriculum.
-        </p>
-        <p>
-          As a self-taught (and still learning) novice web developer, I use the
-          internet to help me decide which of the many web technologies are
-          worth taking the time to learn. In regards to jQuery, I've noticed two
-          interesting things:
+          If you're a new dev wondering whether or not to learn jQuery, you've
+          probably noticed at least one of two things:
         </p>
         <ol>
           <li>
-            A lot of the advice out there about jQuery says you don't need it
-            anymore, yet
+            A lot of advice out there says
+            <a
+              href="http://youmightnotneedjquery.com/"
+              title="A website literally named 'You Might Not Need jQuery'"
+              target="_blank"
+              rel="noreferrer"
+              >you don't need jQuery anymore</a
+            >.
           </li>
           <li>
-            the more I look at real-life JavaScript code, the more I see jQuery.
+            A lot of JavaScript code out there is chock-full of jQuery.
           </li>
         </ol>
+        <p>Should you learn jQuery?</p>
         <p>
-          It's better to know something and not need it, right? Another tool in
-          the toolbox.
-          <br />
-          So with this guide, I aim to help new devs like myself gain a general
-          understanding of what jQuery is and how to use it.
+          The verdict is still out, but it's usually better to know something
+          and not need it than vice versa. This guide won't make you a jQuery
+          master, but you'll learn just enough to decide whether you want to dig
+          deeper.
         </p>
         <p>
-          Don't malign the <code class="code-inline">$</code> sign! <br />
-          jQuery ain't that scary!
-        </p>
-        <p>
-          I hope you learn as much from reading this guide as I learned from
-          making it.
+          Let's learn some jQuery!
         </p>
       </section>
       <section id="Before_Starting" class="main-section">
@@ -154,7 +140,7 @@
             title="Check out MDN for documentation and web development tutorials"
             target="_blank"
             rel="noreferrer"
-            >Mozilla Developer Network</a
+            >Mozilla Developer Network (MDN)</a
           >
           is a great resource to use for exploring more about all of these
           topics.
@@ -163,36 +149,180 @@
       <section id="What_is_jQuery" class="main-section">
         <header><h1>What is jQuery?</h1></header>
         <p>
-          jQuery is a lightweight JavaScript library designed for manipulating
-          the DOM (Document Object Model) of an HTML document. It is free and
-          open-source under the
+          First released in 2006, jQuery is a JavaScript library that made
+          navigating and manipulating the DOM of an HTML document easy compared
+          to pre-ES6 JavaScript. Free to use under the
           <a
-            href="https://opensource.org/licenses/MIT"
-            title="Use of MIT licensed software requires only that the MIT License terms and copyright notice are included."
+            href="https://jquery.org/license/"
+            title="Use of jQuery requires only that the MIT License terms and copyright notice are included."
             target="_blank"
             rel="noreferrer"
           >
             MIT License</a
+          >, jQuery quickly became popular for its cross-browser compatibility
+          and its simplification of handling DOM events, animating HTML elements
+          and making HTTP requests with Asynchronous JSON and XML (AJAX).
+        </p>
+        <p>
+          Over a decade later, much of what jQuery offers can be done with
+          vanilla JavaScript using the modern DOM API. Despite that, jQuery
+          remains the most widely used JavaScript library, deployed by over 70%
+          of the top 10 million most popular websites.
+          <a
+            href="https://w3techs.com/technologies/overview/javascript_library/all"
+            title="W3Techs surveys the usage rates of various web technologies"
+            target="_blank"
+            rel="noreferrer"
+            >W3Techs</a
           >
-          and is the most widely-used JavaScript library, deployed by 73% of the
-          10 million most popular websites.
+          statistics show that over 20% of websites use no JS library at all,
+          meaning that almost every website that uses a JS library uses jQuery.
         </p>
         <p>
-          jQuery makes selecting and editing DOM elements easier for developers
-          compared to vanilla JavaScript. The library is built for cross-browser
-          consistency, eliminating errors caused by differing browser JavaScript
-          engines. jQuery also simplifies event-handling, CSS animation and
-          asychronous use of AJAX.
+          At the time of this writing, the most current stable release of the
+          software is jQuery 3.4.1.
         </p>
+        <h2>There are several ways to add jQuery to your projects:</h2>
+        <ul>
+          <li>
+            <h3>Using a CDN</h3>
+            <p>
+              Using a CDN (Content Delivery Network) is probably the easiest way
+              to include jQuery in your projects. Simply include a
+              <code class="code-inline">&lt;script&gt;</code> tag in your HTML
+              file with the <code class="code-inline">src</code> attribute set
+              to the CDN link.
+            </p>
+            <p>
+              Official CDN links for jQuery can be found at
+              <a
+                href="https://code.jquery.com/"
+                title="Visit here for official jQuery CDN links."
+                target="_blank"
+                rel="noreferrer"
+                >code.jquery.com</a
+              >. The jQuery CDN offers links to compressed and uncompressed
+              versions of both current and past releases, as well as supporting
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+                title="SRI is a security feature that allows browsers to verify that the files being delivered have not been modified."
+                target="_blank"
+                rel="noreferrer"
+                >Subresource Integrity (SRI)</a
+              >
+              for website security.
+            </p>
+            <p>
+              The <code class="code-inline">&lt;script&gt;</code> tag to include
+              the uncompressed CDN version of jQuery 3.4.1 looks like this:
+            </p>
+            <code class="code-block">
+              <pre>
+  &lt;script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"&gt;&lt;/script&gt;
+              </pre>
+            </code>
+          </li>
+          <li>
+            <h3>
+              Downloading jQuery Locally
+            </h3>
+            <p>
+              Setting up jQuery by downloading it to your local environment is
+              also pretty simple. Download your desired version from
+              <a
+                href="https://jquery.com/download/"
+                title="Download jQuery 3.4.1 in compressed or uncompressed format"
+                target="_blank"
+                rel="noreferrer"
+                >jquery.com/download</a
+              >
+              to your project folder.
+            </p>
+            <p>
+              Add a <code class="code-inline">&lt;script&gt;</code> tag to your
+              HTML with the <code class="code-inline">src</code> attribute set
+              to the path leading to your project folder.
+            </p>
+            <p>
+              Linking to a local version of jQuery with a
+              <code class="code-inline">&lt;script&gt;</code> tag will have the
+              following format where <code class="code-inline">{path}</code> is
+              the path to your project folder and
+              <code class="code-inline">{version}</code> is the suffix of the
+              jQuery file being linked to.
+              <br />
+            </p>
+            <code class="code-block">
+              <pre>
+  &lt;script
+    src="{path}/jquery-{version}.js"
+  &gt;
+  &lt;/script&gt;
+              </pre>
+            </code>
+          </li>
+          <li>
+            <h3>Using a Package Manager</h3>
+            <p>
+              If you use a package manager, jQuery can be installed from the
+              command line.
+            </p>
+            <p>
+              To install jQuery using npm, navigate to your project folder in
+              the command line and run the command
+              <code class="code-inline">npm install jquery</code>
+            </p>
+            <p>
+              This will install both the compressed and uncompressed versions of
+              jQuery 3.4.1 in your project's
+              <code class="code-inline">node_modules</code> folder.
+            </p>
+            <p>
+              You can then use
+              <code class="code-inline"
+                >{path}/node_modules/jquery/dist/jquery-{version}.js</code
+              >
+              as the <code class="code-inline">src</code> attribute for your
+              <code class="code-inline">&lt;script&gt;</code> tag.
+            </p>
+            <p>
+              You can also import jQuery directly into your project's main JS
+              file by adding the statement
+              <code class="code-inline">import $ from "jquery"</code>
+            </p>
+            <p>
+              Be aware that importing modules is an ES6 feature that may not be
+              supported in all browsers. You can check browser compatibility at
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Browser_compatibility"
+                title="MDN documentation page for import"
+                target="_blank"
+                rel="noreferrer"
+                >MDN's documentation page</a
+              >
+              of the <code class="code-inline">import</code> statement.
+            </p>
+            <p>
+              If your project will be running in older browsers, using
+              <code class="code-inline">import</code> will require Babel, a
+              JavaScript compiler that converts ES6+ syntax into
+              backwards-compatible JavaScript code.
+              <a
+                href="https://babeljs.io/docs/en/usage"
+                title="Babel installation instructions"
+                target="_blank"
+                rel="noreferrer"
+                >Follow these instructions to set up Babel using npm</a
+              >.
+            </p>
+          </li>
+        </ul>
         <p>
-          Here is an example of some jQuery code.
-          <br />
-          Note the frequent use of the
-          <code class="code-inline">$</code> symbol, followed by HTML element
-          names within parens.
-          <br />
-          This brings us to the first important jQuery concept: the jQuery
-          function.
+          Now that you know how to set up jQuery, here is an example of some
+          jQuery code.
         </p>
         <code class="code-block">
           <pre>
@@ -203,9 +333,20 @@
   });
           </pre>
         </code>
+        <p>
+          Note the frequent use of the
+          <code class="code-inline">$</code> symbol, followed by HTML element
+          names within parentheses.
+          <br />
+          This brings us to the first important jQuery concept: the jQuery
+          function.
+        </p>
       </section>
       <section id="The_jQuery_Function" class="main-section">
         <header><h1>The jQuery Function</h1></header>
+        <p>
+          The jQuery function is a constructor function, used to create jQuery objects upon which the methods of the jQuery library can be used.
+        </p>
         <ul>
           <li>
             The jQuery function is a constructor function, used to create jQuery
@@ -485,5 +626,8 @@
       </section>
     </main>
     <footer><span>kpsiDev</span><span>&nbsp;&copy; 2019</span></footer>
+
+    <!-- <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/jqueryTest/test.js"></script> -->
   </body>
 </html>
