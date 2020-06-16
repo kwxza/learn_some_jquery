@@ -39,6 +39,7 @@ body {
 
   #navbar,
   footer {
+    z-index: 2;
     background-color: var(--brand-dark-color);
     color: var(--light-color);
   }
@@ -47,10 +48,6 @@ body {
     -webkit-transition: background-color 0.15s ease-in;
     transition: background-color 0.15s ease-in;
     background-color: lighten(#0769ad, 15%);
-  }
-
-  code {
-    background-color: lighten(#f0f0f0, 5%);
   }
 }
 
@@ -71,10 +68,6 @@ body {
   .active-nav-link {
     background-color: lighten(#333, 15%);
   }
-
-  code {
-    background-color: lighten(#333, 5%);
-  }
 }
 
 #navbar {
@@ -94,7 +87,7 @@ body {
 
   #menu-bar {
     padding: 0.5rem 1rem;
-    z-index: 1;
+    z-index: 2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -270,6 +263,7 @@ body {
 
   h2 {
     font-size: 1.25rem;
+    margin: 1rem 0 0;
   }
 
   h3 {
@@ -284,7 +278,8 @@ body {
   p {
     margin: 0.65rem 0;
     letter-spacing: 0.07rem;
-    font-size: 1.05rem;
+    // font-size: 1.05rem;
+    font-size: 0.95rem;
     line-height: 1.8rem;
   }
 
@@ -297,10 +292,21 @@ body {
     list-style-type: lower-alpha;
   }
 
+  ul {
+    list-style-type: square;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+
   li {
     padding: 0.65rem 0;
     letter-spacing: 0.07rem;
-    font-size: 1.05rem;
     line-height: 1.8rem;
   }
 
@@ -309,34 +315,35 @@ body {
   }
 
   pre {
-    margin-top: 1rem;
-    width: 95%;
-    overflow-x: auto;
+    -webkit-box-shadow: -0.3px 0 3.5px var(--brand-color);
+    box-shadow: -0.3px 0 3.5px var(--brand-color);
   }
 
-  .code-block {
+  code {
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    background: none;
+
+    // This style stops the annoying background
+    // box from showing up on the operator symbols
+    // when switching from the dark syntax theme
+    // to the light syntax theme
+    .operator {
+      background: none;
+    }
+  }
+
+  // This does the same as above but
+  // for the inline code elements
+  code[class*='language-'] {
+    background: none;
+    white-space: pre;
+  }
+
+  pre {
+    max-height: 80vh;
     -webkit-transition: background-color 0.4s ease-in;
     transition: background-color 0.4s ease-in;
-    border: 1px solid var(--brand-color);
-    border-left: 5px solid var(--brand-color);
-    margin: 2rem 0.5rem;
-    color: var(--brand-color);
-    letter-spacing: 0.1rem;
-    line-height: 1.6rem;
-    font-size: 1.15rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .code-inline {
-    @extend .code-block;
-    border: none;
-    margin: 0;
-    padding: 0 0.5rem;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
   }
 }
 
@@ -367,6 +374,21 @@ footer {
   span:last-of-type {
     font-weight: 400;
   }
+}
+
+.limited-handles
+  > .os-scrollbar-horizontal
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  max-width: 20%;
+  min-width: 40px;
+}
+.limited-handles
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  max-height: 20%;
+  min-height: 40px;
 }
 
 @media (min-width: 550px) {
@@ -449,30 +471,15 @@ footer {
       background-color: lighten(#222, 15%) !important;
     }
   }
-}
-
-@media (min-width: 1000px) and (min-height: 600px) {
-  #main-doc {
-    padding: 0.5rem 3rem;
-  }
-
-  #navbar {
-    width: 250px;
-    padding: 0;
-  }
-
-  #navbar #menu-list {
-    width: 250px;
-  }
-
-  #navbar #menu-header h1 {
-    -webkit-transition: border-bottom 0.4s ease-in;
-    transition: border-bottom 0.4s ease-in;
-    border-bottom: 2px solid lighten(#0769ad, 15%);
-  }
 
   #navbar #menu-toggle {
     display: none;
+  }
+
+  #navbar {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   #navbar #theme-toggle {
@@ -493,12 +500,43 @@ footer {
     bottom: 3rem;
     left: 0rem;
     padding: 0 1rem;
-    width: 250px;
+    width: 206.875px;
     cursor: pointer;
 
     i {
       font-size: 1.4rem;
     }
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 600px) {
+  #main-doc {
+    padding: 0.5rem 3rem;
+  }
+
+  #navbar {
+    width: 255px;
+    padding: 0;
+  }
+
+  #navbar #menu-list {
+    top: 3.4rem;
+    height: calc(100vh - 3.4rem);
+    width: 255px;
+  }
+
+  #navbar #menu-header h1 {
+    -webkit-transition: border-color 0.4s ease-in;
+    transition: border-color 0.4s ease-in;
+    border-bottom: 2px solid lighten(#0769ad, 15%);
+  }
+
+  #navbar #menu-toggle {
+    display: none;
+  }
+
+  #navbar #theme-toggle {
+    width: 255px;
   }
 
   .dark {

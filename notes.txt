@@ -23,9 +23,20 @@ jQuery function: https://api.jquery.com/jQuery/
 Samples of jQuery code vs JavaScript:
 https://medium.com/@mattburgess/in-defence-of-jquery-4a8b20f4696b
 www.youmightnotneedjquery.com
+https://github.com/nefe/You-Dont-Need-jQuery
 
-***Add jQuery vs JavaScript section?
-***Add jQuery Data Types section?
+jQuery performance:
+    https://jsperf.com/native-xhr-vs-jquery-ajax
+    https://jsperf.com/jqueryspeed/12
+    https://medium.com/@trombino.marco/you-might-not-need-jquery-a-2018-performance-case-study-aa6531d0b0c3
+    https://css-tricks.com/now-ever-might-not-need-jquery/
+
 
 ***Style tooltips by using data-* attribute and CSS?
     --> https://stackoverflow.com/questions/2011142/how-to-change-the-style-of-the-title-attribute-inside-an-anchor-tag
+
+https://blog.logrocket.com/the-history-and-legacy-of-jquery/
+
+https://medium.com/mayazine/the-life-and-death-of-jquery-9aca562c80b9
+
+https://medium.com/mayazine/the-life-and-death-of-jquery-9aca562c80b9

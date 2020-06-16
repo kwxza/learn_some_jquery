@@ -8,14 +8,44 @@
       name="Description"
       content="title: An Intro to jQuery, Author: kpsiDev"
     />
+
+    <!-- My styles  and scripts-->
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script defer src="main.js" defer></script>
+
+    <!-- Fonts and icons -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web&display=swap"
       rel="stylesheet"
     />
     <script defer src="https://kit.fontawesome.com/29220c0747.js"></script>
-    <script defer src="main.js" defer></script>
+
+    <!-- Prism JS syntax highlighting themes -->
+    <!-- Default theme -->
+    <link
+      title="highlights"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism.css"
+      integrity="sha256-Vl2/8UdUJhoDlkCr9CEJmv77kiuh4yxMF7gP1OYe6EA="
+      crossorigin="anonymous"
+    />
+
+    <!-- Dark mode theme -->
+    <link
+      title="dark-highlights"
+      rel="alternate stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.css"
+      integrity="sha256-0dkohC9ZEupqWbq0hS5cVR4QQXJ+mp6N2oJyuks6gt0="
+      crossorigin="anonymous"
+    />
+
+    <!-- Overlay Scrollbars CSS/JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css" integrity="sha256-CoItLcnW1HE8FINmwgvvoJ8hfjaGLefJgKKUfMRbn1I=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js" integrity="sha256-rzR7VVyOa7Wrt/l5HRR59pwLXXHvHUjuKpjVt231WfY=" crossorigin="anonymous"></script>
+
+    <!-- FCC testing suite -->
     <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
     <title>FCC Technical Documentation Page</title>
   </head>
   <body>
@@ -49,6 +79,9 @@
             <a href="#What_is_jQuery" class="nav-link">What is jQuery?</a>
           </li>
           <li>
+            <a href="#Setting_Up_jQuery" class="nav-link">Setting Up jQuery</a>
+          </li>
+          <li>
             <a href="#The_jQuery_Function" class="nav-link"
               >The jQuery Function</a
             >
@@ -57,13 +90,7 @@
             <a href="#The_Dollar_Sign" class="nav-link">The '$' Sign</a>
           </li>
           <li>
-            <a href="#jQuery_Syntax" class="nav-link">jQuery Syntax</a>
-          </li>
-          <li>
             <a href="#jQuery_Objects" class="nav-link">jQuery Objects</a>
-          </li>
-          <li>
-            <a href="#DOM_Traversal" class="nav-link">DOM Traversal</a>
           </li>
           <li>
             <a href="#Selecting_Elements" class="nav-link"
@@ -71,13 +98,16 @@
             >
           </li>
           <li>
-            <a href="#Animations" class="nav-link">Animations</a>
+            <a href="#CSS_and_Animations" class="nav-link">CSS & Animations</a>
           </li>
           <li>
             <a href="#Event_Handling" class="nav-link">Event Handling</a>
           </li>
           <li>
             <a href="#AJAX" class="nav-link">AJAX</a>
+          </li>
+          <li>
+            <a href="#Why_Not_jQuery" class="nav-link">Why Not jQuery?</a>
           </li>
         </ul>
       </div>
@@ -91,12 +121,12 @@
           If you're a new dev wondering whether or not to learn jQuery, you've
           probably noticed at least one of two things:
         </p>
-        <ol>
+        <ul>
           <li>
             A lot of advice out there says
             <a
               href="http://youmightnotneedjquery.com/"
-              title="A website literally named 'You Might Not Need jQuery'"
+              title="A website literally named 'You Might Not Need jQuery'."
               target="_blank"
               rel="noreferrer"
               >you don't need jQuery anymore</a
@@ -105,7 +135,7 @@
           <li>
             A lot of JavaScript code out there is chock-full of jQuery.
           </li>
-        </ol>
+        </ul>
         <p>Should you learn jQuery?</p>
         <p>
           The verdict is still out, but it's usually better to know something
@@ -137,7 +167,7 @@
         <p>
           <a
             href="https://developer.mozilla.org/en-US/"
-            title="Check out MDN for documentation and web development tutorials"
+            title="Check out MDN for documentation and web development tutorials."
             target="_blank"
             rel="noreferrer"
             >Mozilla Developer Network (MDN)</a
@@ -149,9 +179,9 @@
       <section id="What_is_jQuery" class="main-section">
         <header><h1>What is jQuery?</h1></header>
         <p>
-          First released in 2006, jQuery is a JavaScript library that made
-          navigating and manipulating the DOM of an HTML document easy compared
-          to pre-ES6 JavaScript. Free to use under the
+          First released in 2006, jQuery is a JavaScript library that made it
+          easy to create interactive websites that worked consistently in
+          different web browsers. Free to use under the
           <a
             href="https://jquery.org/license/"
             title="Use of jQuery requires only that the MIT License terms and copyright notice are included."
@@ -159,38 +189,148 @@
             rel="noreferrer"
           >
             MIT License</a
-          >, jQuery quickly became popular for its cross-browser compatibility
-          and its simplification of handling DOM events, animating HTML elements
-          and making HTTP requests with Asynchronous JSON and XML (AJAX).
+          >, jQuery quickly became popular for its simplification of
+          manipulating the DOM, handling events, animating HTML elements and
+          making asynchronous HTTP requests.
         </p>
         <p>
           Over a decade later, much of what jQuery offers can be done with
           vanilla JavaScript using the modern DOM API. Despite that, jQuery
-          remains the most widely used JavaScript library, deployed by over 70%
+          remains the most widely used JavaScript library, deployed by more than 70%
           of the top 10 million most popular websites.
           <a
             href="https://w3techs.com/technologies/overview/javascript_library/all"
-            title="W3Techs surveys the usage rates of various web technologies"
+            title="W3Techs surveys the usage rates of various web technologies."
             target="_blank"
             rel="noreferrer"
             >W3Techs</a
-          >
-          statistics show that over 20% of websites use no JS library at all,
-          meaning that almost every website that uses a JS library uses jQuery.
+          >' statistics show that over 20% of these sites use no JS library at
+          all, meaning that almost every website that does use a JS library uses
+          jQuery.
         </p>
         <p>
           At the time of this writing, the most current stable release of the
           software is jQuery 3.4.1.
         </p>
-        <h2>There are several ways to add jQuery to your projects:</h2>
+        <h2>Why jQuery?</h2>
+        <p>
+          Why did jQuery become so popular for so long? To put it simply, using
+          jQuery let developers write less code in less time that worked in most
+          browsers.
+        </p>
+        <p>
+          Accounting for the differences between the DOM implementations of
+          various browsers is still a concern for developers today, but this was
+          a much more significant issue at the time of jQuery's creation. The
+          depth of the problem is well-illustrated by an example from
+          <a
+            href="https://github.com/daniellmb/jquery-archive/blob/master/jquery.2006-07-01.js"
+            title="A GitHub repository archiving samples of jQuery's source code prior to October 27, 2006."
+            target="_blank"
+            rel="noreferrer"
+            >jQuery's early source code</a
+          >.
+        </p>
+        <p>
+          The JavaScript code below is checking to see if the HTML document has
+          been fully loaded and parsed by the browser. Note how the code written
+          for each browser is working with the same
+          <code class="language-js">document</code> object, yet the DOM methods
+          used for each browser are entirely different.
+        </p>
+        <pre class="limited-handles">
+          <code class="language-js">
+  // If Mozilla is used
+  if ( jQuery.browser == "mozilla" || jQuery.browser == "opera" ) {
+          // Use the handy event callback
+          jQuery.event.add( document, "DOMContentLoaded", jQuery.ready );
+  
+  // If IE is used, use the excellent hack by Matthias Miller
+  // http://www.outofhanwell.com/blog/index.php?title=the_window_onload_problem_revisited&nbsp;&nbsp;
+  } else if ( jQuery.browser == "msie" ) {
+  
+          // Only works if you document.write() it
+          document.write("&lt;scr" + "ipt id=__ie_init defer=true " + 
+                  "src=javascript:void(0)&gt;&lt;\/script>");
+  
+          // Use the defer script hack
+          var script = document.getElementById("__ie_init");
+          script.onreadystatechange = function() {
+                  if ( this.readyState == "complete" )
+                          jQuery.ready();
+          };
+  
+          // Clear from memory
+          script = null;
+  
+  // If Safari  is used
+  } else if ( jQuery.browser == "safari" ) {
+          // Continually check to see if the document.readyState is valid
+          jQuery.safariTimer = setInterval(function(){
+                  // loaded and complete are both valid states
+                  if ( document.readyState == "loaded" || 
+                          document.readyState == "complete" ) {
+  
+                          // If either one are found, remove the timer
+                          clearInterval( jQuery.safariTimer );
+                          jQuery.safariTimer = null;
+  
+                          // and execute any waiting functions
+                          jQuery.ready();
+                  }
+          }, 10);
+  }
+          </code>
+        </pre>
+        <p>
+          Instead of recreating the above functionality to handle the loading of the DOM, a developer using the jQuery library in their project could pass the
+          <code class="language-js">document</code> as an argument to
+          jQuery's main function <code class="language-js">jQuery()</code> and then
+          immediately call jQuery's
+          <code class="language-js">.ready()</code> method on the jQuery object
+          returned from the function.
+        </p>
+        <p>
+          The library would do the work of filling in the correct browser
+          methods and the developer would have written only one line of code:
+          <code class="language-js">jQuery(document).ready()</code>
+        </p>
+        <p>
+          Though modern browsers implement the DOM much more consistently, using
+          jQuery still allows developers to write less code in less time than
+          they otherwise might while maintaining
+          <a
+            href="https://jquery.com/browser-support/"
+            title="A list of browsers supported by jQuery 3.4.1."
+            target="_blank"
+            rel="noreferrer"
+            >cross-browser compatibility</a
+          >. In fact, jQuery 1.12 is still in use today to support old versions
+          of Internet Explorer.
+        </p>
+      </section>
+      <section id="Setting_Up_jQuery" class="main-section">
+        <header><h1>Setting Up jQuery</h1></header>
+        <p>
+          jQuery offers both a compressed (minified) and uncompressed version of
+          the software. The uncompressed version is typically used during
+          development, while the compressed version of the library is used once
+          the application is put into production.
+        </p>
+        <p>
+          You must link a copy of jQuery's software to your project before you
+          can take advantage of its methods. You can use the most current
+          version or any of the previous releases that are still supported.
+          There are several ways to add the jQuery library to your projects.
+        </p>
         <ul>
           <li>
-            <h3>Using a CDN</h3>
+            <h2>Linking to a CDN</h2>
             <p>
-              Using a CDN (Content Delivery Network) is probably the easiest way
-              to include jQuery in your projects. Simply include a
-              <code class="code-inline">&lt;script&gt;</code> tag in your HTML
-              file with the <code class="code-inline">src</code> attribute set
+              Using a CDN (Content Delivery Network) is the easiest way to
+              include jQuery in your projects. Simply add a
+              <code class="language-html">&lt;script&gt;</code> tag to your HTML
+              file with the <code class="language-html">src</code> attribute set
               to the CDN link.
             </p>
             <p>
@@ -213,28 +353,30 @@
               for website security.
             </p>
             <p>
-              The <code class="code-inline">&lt;script&gt;</code> tag to include
-              the uncompressed CDN version of jQuery 3.4.1 looks like this:
+              The <code class="language-html">&lt;script&gt;</code> tag to
+              include the uncompressed CDN version of jQuery 3.4.1 looks like
+              this:
             </p>
-            <code class="code-block">
-              <pre>
+            <pre class="limited-handles">
+              <code class="language-html">
   &lt;script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"&gt;&lt;/script&gt;
-              </pre>
-            </code>
+    crossorigin="anonymous"
+  &gt;&lt;/script&gt;
+              </code>
+            </pre>
           </li>
           <li>
-            <h3>
-              Downloading jQuery Locally
-            </h3>
+            <h2>
+              Downloading jQuery Manually
+            </h2>
             <p>
               Setting up jQuery by downloading it to your local environment is
               also pretty simple. Download your desired version from
               <a
                 href="https://jquery.com/download/"
-                title="Download jQuery 3.4.1 in compressed or uncompressed format"
+                title="Download jQuery 3.4.1 in compressed or uncompressed format."
                 target="_blank"
                 rel="noreferrer"
                 >jquery.com/download</a
@@ -242,81 +384,82 @@
               to your project folder.
             </p>
             <p>
-              Add a <code class="code-inline">&lt;script&gt;</code> tag to your
-              HTML with the <code class="code-inline">src</code> attribute set
-              to the path leading to your project folder.
-            </p>
-            <p>
               Linking to a local version of jQuery with a
-              <code class="code-inline">&lt;script&gt;</code> tag will have the
-              following format where <code class="code-inline">{path}</code> is
-              the path to your project folder and
-              <code class="code-inline">{version}</code> is the suffix of the
+              <code class="language-html">&lt;script&gt;</code> tag will have
+              the following format where
+              <code class="language-html">{path}</code> is the path leading to
+              your project folder and
+              <code class="language-html">{version}</code> is the suffix of the
               jQuery file being linked to.
               <br />
             </p>
-            <code class="code-block">
-              <pre>
+            <pre class="limited-handles">
+              <code class="language-html">
   &lt;script
     src="{path}/jquery-{version}.js"
-  &gt;
-  &lt;/script&gt;
-              </pre>
-            </code>
+  &gt;&lt;/script&gt;
+              </code>
+            </pre>
           </li>
           <li>
-            <h3>Using a Package Manager</h3>
+            <h2>Downloading with a Package Manager</h2>
             <p>
               If you use a package manager, jQuery can be installed from the
               command line.
             </p>
             <p>
               To install jQuery using npm, navigate to your project folder in
-              the command line and run the command
-              <code class="code-inline">npm install jquery</code>
+              your command line interface and run the command
+              <code class="language-js">npm install jquery</code>
             </p>
             <p>
               This will install both the compressed and uncompressed versions of
               jQuery 3.4.1 in your project's
-              <code class="code-inline">node_modules</code> folder.
+              <code class="language-js">node_modules</code> folder.
             </p>
             <p>
-              You can then use
-              <code class="code-inline"
-                >{path}/node_modules/jquery/dist/jquery-{version}.js</code
+              Now you can use the uncompressed version by setting
+              <code class="language-html"
+                >node_modules/jquery/dist/jquery.js</code
               >
-              as the <code class="code-inline">src</code> attribute for your
-              <code class="code-inline">&lt;script&gt;</code> tag.
+              as the <code class="language-html">src</code> attribute for your
+              <code class="language-html">&lt;script&gt;</code> tag. Use
+              <code class="language-html">jquery.min.js</code> for the
+              compressed version.
             </p>
             <p>
-              You can also import jQuery directly into your project's main JS
-              file by adding the statement
-              <code class="code-inline">import $ from "jquery"</code>
+              Alternatively, you can import jQuery directly into your project's
+              main JS file by adding the statement
+              <code class="language-js">import $ from "jquery";</code>
             </p>
             <p>
-              Be aware that importing modules is an ES6 feature that may not be
-              supported in all browsers. You can check browser compatibility at
+              Using <code class="language-js">import</code> to add jQuery to your project as a module can be tricky. Most likely, you will require the use of a JavaScript transpiler and a module bundler. Importing modules is an ES6 feature
+              that is not yet well-supported in all browsers. You can check
+              browser compatibility at
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Browser_compatibility"
-                title="MDN documentation page for import"
+                title="The MDN documentation page for import."
                 target="_blank"
                 rel="noreferrer"
                 >MDN's documentation page</a
               >
-              of the <code class="code-inline">import</code> statement.
+              of the <code class="language-js">import</code> statement.
             </p>
             <p>
-              If your project will be running in older browsers, using
-              <code class="code-inline">import</code> will require Babel, a
-              JavaScript compiler that converts ES6+ syntax into
-              backwards-compatible JavaScript code.
+              A JavaScript transpiler will convert ES6+ syntax like
+              <code class="language-js">import</code>
+              into backwards-compatible ES5 JavaScript code that will work in
+              most browsers. Babel is one of the most popular ones.
               <a
                 href="https://babeljs.io/docs/en/usage"
-                title="Babel installation instructions"
+                title="Babel installation and set-up instructions."
                 target="_blank"
                 rel="noreferrer"
                 >Follow these instructions to set up Babel using npm</a
-              >.
+              >.              
+            </p>
+            <p>
+                A package downloaded from npm is simply a directory of JS modules, which get installed to your project's <code class="language-js">node_modules</code> folder. Using modules in <code class="language-js">node</code> works easily, but browsers cannot find module dependencies on their own. A module bundler will bundle the modules your project depends on into a script file that browsers can read. One of the most commonly-used module bundlers is webpack. <a href="https://webpack.js.org/guides/getting-started/" title="Installation and set-up instructions for webpack." target="_blank" rel="noreferrer">Follow these instructions to set up webpack using npm.</a> 
             </p>
           </li>
         </ul>
@@ -324,310 +467,1090 @@
           Now that you know how to set up jQuery, here is an example of some
           jQuery code.
         </p>
-        <code class="code-block">
-          <pre>
+        <pre class="limited-handles">
+          <code class="language-js">
   $(document).ready(function(){
     $("button").click(function(){
         $("div").animate({height:"toggle"}).append("hi");
     });
   });
-          </pre>
-        </code>
+          </code>
+        </pre>
         <p>
           Note the frequent use of the
-          <code class="code-inline">$</code> symbol, followed by HTML element
-          names within parentheses.
-          <br />
-          This brings us to the first important jQuery concept: the jQuery
-          function.
+          '<code class="language-js">$</code>' sign, followed by references to HTML elements
+          within parentheses. This brings us to the first important
+          jQuery concept - the jQuery function.
         </p>
       </section>
       <section id="The_jQuery_Function" class="main-section">
         <header><h1>The jQuery Function</h1></header>
         <p>
-          The jQuery function is a constructor function, used to create jQuery objects upon which the methods of the jQuery library can be used.
+          The jQuery function allows developers to precisely select any element
+          or collection of elements within an HTML document.
+          <code class="language-js">jQuery()</code> can also create elements
+          if passed a string of HTML as its argument. The jQuery function always
+          returns a jQuery object. jQuery objects will be covered in more detail in <a href="#jQuery_Objects" title="Learn Some jQuery: jQuery Objects"
+            ><strong>Learn Some jQuery: jQuery Objects</strong></a
+          >.
         </p>
+        <h2>Working with <code class="language-js">jQuery():</code></h2>
         <ul>
           <li>
-            The jQuery function is a constructor function, used to create jQuery
-            objects upon which the methods of the jQuery library can be used.
+            <h3>
+              Handling the loading of the DOM:
+            </h3>
+            <p>
+              To safely manipulate the DOM, it is necessary to wait until the
+              HTML document has been fully loaded and parsed by the browser.
+              With jQuery, you can handle DOM loading by wrapping all code that
+              depends on the readiness of the DOM within a call to
+              <code class="language-js">jQuery()</code>.
+            </p>
+            <p>
+              This can be done by putting your DOM-dependent code into a
+              callback function that can be passed as an argument to
+              <code class="language-js">jQuery()</code>. This is normally done
+              with an anonymous function, but you can also define a named
+              function containing your code manipulating the DOM. Then, simply
+              pass the function name to <code class="language-js">jQuery()</code>.
+            </p>
+            <p>
+              You will commonly see <code class="language-js">$()</code> used in
+              place of <code class="language-js">jQuery()</code>. We will cover the '<code class="language-js">$</code>' syntax in more detail in <a href="#The_Dollar_Sign" title="Learn Some jQuery: The '$' Sign"><strong>Learn Some jQuery: The '$' Sign</strong></a>. Let's use that
+              syntax now to look at an example of handling the loading of the DOM.
+            </p>
+            <pre class="limited-handles">
+              <code class="language-js">
+  /*              
+   Handling DOM loading with jQuery()
+   and an anonymous callback function.
+  */
+  $(function() {
+    // Code manipulating the DOM...
+  });
+  
+
+  /*
+   Does the same as above, but with
+   a named callback function.
+  */
+  // Defining the callback function
+  function runOnceDOMIsReady() {
+    // Code manipulating the DOM...
+  }
+  // Wrapping the callback function in jQuery().
+  $(runOnceDOMIsReady);
+  
+              </code>
+            </pre>
+            <p>
+              The example above shows the recommended way to handle the
+              loading of the DOM. When looking at code using jQuery, you will often see another way of handling DOM loading, which makes use of jQuery's
+              <code class="language-js">.ready()</code> method:
+            </p>
+            <pre class="limited-handles">
+              <code class="language-js">
+  $(document).ready(function() {
+    // Code manipulating the DOM...
+  });
+              </code>
+            </pre>
+            <p>
+              This form of handling DOM loading has been deprecated to avoid
+              misunderstanding of how the
+              <code class="language-js">.ready()</code> method works. The syntax
+              of the statement
+              <code class="language-js">$(selector).ready()</code> implies that
+              the execution of the
+              <code class="language-js">.ready()</code> method depends on the
+              loading of the element(s) selected by
+              <code class="language-js">jQuery(selector)</code>. The selection
+              is actually irrelevant. The
+              <code class="language-js">.ready()</code> method will always
+              execute as soon as possible once the entire DOM has finished
+              loading.
+            </p>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>
+            <h3>
+              Wrapping DOM elements in jQuery objects:
+            </h3>
+            <p>
+              The jQuery function is typically used to select elements from the
+              DOM and wrap them within a newly-created jQuery object. This
+              allows jQuery's object methods to be used in place of the native
+              DOM methods. Working with DOM elements directly is possible, but
+              can be difficult to do concisely while maintaining
+              browser-compatibility.
+            </p>
+            <p>
+              <code class="language-js">jQuery()</code> takes a selector
+              expression in order to select elements from the DOM. Any and all
+              elements that match the selector will be found and returned by the
+              function. Keep in mind that
+              <code class="language-js">jQuery()</code> will return an empty
+              jQuery object if there are no DOM elements that match the
+              selector. Many of the possible selector expressions in jQuery are
+              identical to CSS selectors. We will cover selector expressions in
+              more detail in
+              <a
+                href="#Selecting_Elements"
+                title="Learn Some jQuery: Selecting Elements"
+                ><strong>Learn Some jQuery: Selecting Elements</strong></a
+              >.
+            </p>
+          </li>
+          <li>
+            <h3>
+              Creating new DOM elements:
+            </h3>
+            <p>
+              The jQuery function is also used to create new DOM elements. This
+              is done by giving a string of valid HTML to
+              <code class="language-js">jQuery()</code>. The function returns a
+              jQuery object containing the newly-created elements, which can be
+              inserted into the document using jQuery's object methods. It is
+              possible to create elements belonging to a document other than the
+              one in which the jQuery library has been loaded.
+            </p>
+            <p>
+              To create an element, you can provide
+              <code class="language-js">jQuery()</code> with either:
+            </p>
+            <ul>
+              <li>
+                a string describing a single HTML element which can have text
+                content and attributes,
+              </li>
+              <li>
+                a more complex string containing multiple HTML elements that may
+                be nested within each other, or
+              </li>
+              <li>
+                a string describing a simple HTML element and an object
+                describing its attributes.
+              </li>
+            </ul>
+            <p>
+              In most cases, jQuery will create a new
+              <code class="language-html">&lt;div&gt;</code> element and set its
+              <code class="language-html">innerHTML</code> property to the HTML
+              string passed to the function.
+            </p>
+            <p>
+              Below are a few examples showing how to use
+              <code class="language-js">jQuery()</code> to create elements. The
+              examples will use the <code class="language-js">$()</code> syntax.
+            </p>
+            <pre class="limited-handles">
+              <code class="language-js">
+  /*
+    Creating a &lt;h1&gt; with text content and 
+    an id attribute and adding it to the body.
+  */
+  $('&lt;h1 id="header"&gt;Hello World&lt;/h1&gt;').appendTo('body');
+
+
+  /*
+    Creating an &lt;img&gt; element nested 
+    within an &lt;a&gt; element and saving 
+    the created elements to a named 
+    variable as a jQuery object.
+  */
+  const $imgLink = $('&lt;a&gt;&lt;img&gt;&lt;/a&gt;');
+
+
+  /*
+    Creating an &lt;input&gt; element with its
+    type attribute set to 'checkbox'
+    and appending it to the element
+    with the id of 'form'.
+  */
+  $('&lt;input type="checkbox"&gt;').appendTo('#form');
+
+
+  /* 
+    Creating a &lt;p&gt; element that belongs
+    to the parent document of the 
+    element with the id of 'myiframe'.
+    (The &lt;iframe&gt; element embeds another
+     HTML document within the current one,
+     representing a nested browsing context.)
+  */
+  const $iframeParagraph = $(
+    '&lt;p&gt;hello iframe&lt;/p&gt;', 
+    $('#myiframe').prop('contentWindow').document
+  );
+
+
+  /*
+    Creating a &lt;div&gt; element with an
+    object describing attributes, event
+    handlers and jQuery methods to call
+    on the created element.
+    The created &lt;div&gt; is wrapped in a
+    jQuery object and saved to a variable.
+    Object keys:
+      class - Sets the 'class' attribute.
+
+      text -  Calls jQuery's .text() method 
+              once the &lt;div&gt; has been 
+              created - this sets the text
+              content of the element.
+              
+      click - Adds an event handler to the
+              &lt;div&gt;, which will run the 
+              provided callback function when
+              the element has been clicked.
+  */
+  const $testDiv = $('&lt;div/&gt;', {
+    class: 'test',
+    text: 'Click me!',
+    click: function() {
+      $(this).toggleClass('test');
+    }
+  });
+              </code>
+            </pre>
+          </li>
+        </ul>
+        <h2>
+          Possible Arguments for <code class="language-js">jQuery()</code>:
+        </h2>
+        <ul>
+          <li>
+            <h3>Selection Arguments</h3>
+            <p>
+              There are various possible arguments for wrapping a selection of pre-existing DOM elements into a jQuery object. A <code class="language-js">selector</code> expression for <code class="language-js">jQuery()</code>'s argument finds all the matching elements present in the DOM. The argument can also be a specific element or collection of elements, given either as DOM elements or as another jQuery object. <code class="language-js">jQuery()</code> is even able to create an empty jQuery object or wrap a JavaScript <code class="language-js">Object</code>. Here is a list of the possible arguments for selections:
+            </p>
+            <ol>
+              <li>
+                <code class="language-js">jQuery(selector [,context])</code>
+                <ul>
+                  <li>
+                    <code class="language-js">selector</code> - a string
+                    containing a selector expression.
+                  </li>
+                  <li>
+                    <code class="language-js">context</code> (optional) - a DOM
+                    element, document or jQuery object as the context in which
+                    to find any element(s) matching the selector. The default
+                    context is the entire document in which the jQuery library
+                    has been loaded.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery(element)</code>
+                <ul>
+                  <li>
+                    <code class="language-js">element</code> - a DOM element.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery(elementArray)</code>
+                <ul>
+                  <li>
+                    <code class="language-js">elementArray</code> - an array of
+                    DOM elements.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery(object)</code>
+                <ul>
+                  <li>
+                    <code class="language-js">object</code> - a
+                    <a
+                      href="https://api.jquery.com/Types/#PlainObject"
+                      title="jQuery's API documentation for the PlainObject type."
+                      target="_blank"
+                      rel="noreferrer"
+                      >PlainObject</a
+                    >, which is jQuery's definition of a JavaScript object of
+                    type <code class="language-js">Object</code>.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery(selection)</code>
+                <ul>
+                  <li>
+                    <code class="language-js">selection</code> - a jQuery object
+                    to be cloned, containing previously selected/created
+                    elements.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery()</code>
+                <ul>
+                  <li>
+                    Providing no arguments to the function will return an empty
+                    jQuery object.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Creation Arguments</h3>
+              There are only a few possible arguments for creating new DOM elements. Keep in mind that created elements do not appear in the DOM until they have been inserted into the <code class="language-js">document</code>. The created elements are wrapped within a new jQuery object. Here are the possible creation arguments for <code class="language-js">jQuery()</code>:
+            <ol>
+              <li>
+                <code class="language-js">jQuery(html [,ownerDocument])</code>
+                <ul>
+                  <li>
+                    <code class="language-js">html</code> - a string of HTML to
+                    be created.
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <code class="language-js">ownerDocument</code> (optional) -
+                    an HTML document to which the new element(s) will belong.
+                    The default document is the HTML document in which the
+                    jQuery library has been loaded.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code class="language-js">jQuery(html, attributes)</code>
+                <ul>
+                  <li>
+                    <code class="language-js">html</code> - a string defining a
+                    single, standalone HTML element.
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <code class="language-js">attributes</code> - a PlainObject
+                    containing key-value pairs of attributes, events and methods
+                    to call on the newly-created element.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </li>
         </ul>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
+          Refer to
+          <a
+            href="https://api.jquery.com/jQuery/"
+            title="The API documentation page for the jQuery function."
+            target="_blank"
+            rel="noreferrer"
+            >the jQuery API documentation</a
+          >
+          for more details on how
+          <code class="language-js">jQuery()</code> works for each of these
+          different arguments.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
-  });
-          </pre>
-        </code>
       </section>
       <section id="The_Dollar_Sign" class="main-section">
         <header><h1>The '$' Sign</h1></header>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
+          The '<code class="language-js">$</code>' sign is a recognizable
+          characteristic of jQuery, but has no intrinsic meaning in and of
+          itself. It is simply an alias for '<code class="language-js"
+            >jQuery</code
+          >' that makes it faster to call the jQuery function.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
+          Thus, <code class="language-js">jQuery(document).ready()</code> can be
+          written as <code class="language-js">$(document).ready()</code>. This
+          is the form that you will usually see. In this guide,
+          <code class="language-js">jQuery()</code> is used primarily to refer
+          to the jQuery function in text, while
+          <code class="language-js">$()</code> is mostly used within code
+          examples.
+        </p>
+        <h2>Conflicts with other libraries:</h2>
+        <p>
+          The '<code class="language-js">$</code>' sign is an unused
+          character in JavaScript and there are several JS libraries that use it
+          as an alias for their identifier. Using such a library simultaneously
+          with jQuery can cause a conflict.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
+          You can avoid this by immediately calling
+          <code class="language-js">jQuery.noConflict()</code> before using the
+          jQuery function to handle the loading of the DOM. This will put jQuery
+          into no-conflict mode. You can then use
+          <code class="language-js">jQuery()</code> in place of
+          <code class="language-js">$()</code>, allowing the '<code
+            class="language-js"
+            >$</code
+          >' sign to be used as the other library's alias. The following example shows how this would appear.
         </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
+        <pre class="limited-handles">
+          <code class="language-js">
+  // Putting jQuery into no-conflict mode.
+  jQuery.noConflict();
+
+  // Handling DOM loading with jQuery().
+  jQuery(function() {
+    // jQuery code using jQuery()...
   });
-          </pre>
-        </code>
-      </section>
-      <section id="jQuery_Syntax" class="main-section">
-        <header><h1>jQuery Syntax</h1></header>
+
+  /*
+   Code using '$' as the alias for
+   another library can follow here.
+  */
+          </code>
+        </pre>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
+          You can set a new alias for
+          <code class="language-js">jQuery()</code> when you enable no-conflict
+          mode. You will then be able to handle DOM loading by calling the jQuery function using the new
+          alias. This is demonstrated below.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
+        <pre class="limited-handles">
+          <code class="language-js">
+  /*          
+   Putting jQuery into no-conflict
+   mode and setting a new alias.
+  */ 
+  const $j = jQuery.noConflict();
+
+  /*
+   Handling DOM loading using the new alias
+   and an anonymous callback function.
+  */
+  $j(function() {
+    // jQuery code using the $j() alias...
   });
-          </pre>
-        </code>
+
+  /*
+   Code using '$' as the alias for
+   another library can follow here.
+  */
+          </code>
+        </pre>
+        <p>
+          If you prefer using the <code class="language-js">$()</code> alias,
+          you can put jQuery into no-conflict mode and handle DOM loading using
+          <code class="language-js">jQuery()</code>, passing
+          '<code class="language-js">$</code>' as an argument to the handler's
+          callback function. This allows safe use of the
+          <code class="language-js">$()</code> alias for all jQuery code within the scope
+          of the callback function. Code outside of the DOM-loading handler will
+          be able to use the '<code class="language-js">$</code>' alias without
+          any conflict. An example is given below.
+        </p>
+        <pre class="limited-handles">
+          <code class="language-js">
+  // Enabling no-conflict mode.
+  jQuery.noConflict();
+
+  /*
+    Handling DOM loading using jQuery()
+    and passing '$' to the callback 
+    function, to be used within as the 
+    alias for jQuery.
+  */
+  jQuery(function($) {
+    // jQuery code safely using $() alias... 
+  });
+
+  /*
+   Code using '$' as the alias for
+   another library can follow here.
+  */
+          </code>
+        </pre>
+        <h2>The '$' sign in variable names:</h2>
+        <p>
+          In the above example of how to set a new alias for <code class="language-js">jQuery()</code>, the new alias contains the '<code class="language-js">$</code>' sign. This is not required, but it is conventional to add
+          the '<code class="language-js">$</code>' sign as a prefix when naming variables containing jQuery objects. This
+          is to distinguish them from variables containing DOM elements or
+          regular JavaScript data types.
+        </p>
+        <pre class="limited-handles">
+          <code class="language-js">
+  /*
+    Getting and storing the footer 
+    element using DOM methods vs jQuery.
+  */
+
+  // DOM method.
+  const footer = document.getElementsByTagName('footer');
+
+  //jQuery method with naming convention.
+  const $footer = $('footer');
+          </code>
+        </pre>
+        <p>
+          In the above example, the variables are both named
+          <code class="language-js">footer</code>, but the variable containing
+          the jQuery object is prefixed by the
+          '<code class="language-js">$</code>' sign. This makes it easy to tell
+          which variable refers directly to the DOM element as opposed to the
+          jQuery object wrapping the DOM element, while still making it clear
+          that the element in question is the
+          <code class="language-html">&lt;footer&gt;</code>.
+        </p>
+        <p>
+          This pattern is common when working with jQuery. While many jQuery methods return jQuery objects, there are methods which return other types
+          of data, especially DOM elements. Keeping track of
+          which data types are contained in your variables will help avoid introducing errors into your code. Native DOM
+          methods will not work on jQuery objects and jQuery object methods will
+          not work on DOM elements.
+        </p>
+        <p>
+          Let's go deeper into the topic of jQuery objects.
+        </p>
       </section>
       <section id="jQuery_Objects" class="main-section">
         <header><h1>jQuery Objects</h1></header>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
+          jQuery objects are created when
+          <code class="language-js">jQuery()</code> is used to select or create
+          DOM elements. They have some similarities to JavaScript <code class="language-js">Array</code> objects; they have a length property and a zero-based index for
+          the collection of DOM elements they contain. However, jQuery objects cannot be manipulated with native <code class="language-js">Array</code> methods, such as
+          <code class="language-js">Array.forEach()</code> or
+          <code class="language-js">Array.join()</code>. It is best to use jQuery methods when working with jQuery objects.
         </p>
+        <h2>Working with jQuery objects:</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
+          The examples in this section will demonstrate ways of working with jQuery objects. You will see the use of various jQuery object methods as well as different types of <code class="language-js">selector</code> expressions. If you want to cover selectors in more detail before this section, skip ahead to <a href="#Selecting_Elements" title="Learn Some jQuery: Selecting Elements"><strong>Learn Some jQuery: Selecting Elements</strong></a>. If you want to know more about a particular object method, search the name of the method in <a href="https://api.jquery.com/" title="The jQuery API." target="_blank" rel="noreferrer">the jQuery API</a> for detailed documentation.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
+        <ul>
+          <li>
+            <h3>Using jQuery object properties:</h3>
+            <p>
+              jQuery objects possess two properties, both of which can be quite useful.
+            </p>
+            <ul>
+              <li>
+                <h4>The <code class="language-js">.jquery</code> property:</h4>
+                <p>
+                  You can check the <code class="language-js">.jquery</code> property to determine whether a particular object is a jQuery object. A jQuery object will return a string containing the jQuery version number; checking the <code class="language-js">.jquery</code> property on anything other than a jQuery object will return <code class="language-js">undefined</code>.  
+                </p>
+                <p>
+                  In JavaScript, strings are <code class="language-js">true</code> and <code class="language-js">undefined</code> is <code class="language-js">false</code> when evaluated in a Boolean context. This means that the <code class="language-js">.jquery</code> property can be used as a <code class="language-js">boolean</code> expression for conditional logic.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+   Choose what to do depending on
+   if 'obj' is a jQuery object.
+  */
+  if(obj.jquery) {
+    // Do something... 
+  } else {
+    // Do something else...
+  }                  
+                  </code>
+                </pre>
+                <p>
+                  This can be useful in various scenarios, such as when iterating through a JavaScript <code class="language-js">Object</code> or <code class="language-js">Array</code> that contains various types of data which may include jQuery objects.
+                </p>
+              </li>
+              <li>
+                <h4>The <code class="language-js">.length</code> property:</h4>
+                <p>
+                  Selecting DOM elements using
+                  <code class="language-js">jQuery()</code> creates a jQuery object that contains all the elements matching the <code class="language-js">selector</code> expression given
+                  to the function. An easy way to check how many elements are contained in a jQuery
+                  object is to use the object's
+                  <code class="language-js">.length</code> property.
+                </p>
+                <p>
+                  For example, after selecting all the
+                  <code class="language-html">&lt;h1&gt;</code> elements in the
+                  document, you may want to see how many there actually are:
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+    Selecting all the &lt;h1&gt; 
+    elements in the document.
+  */
+  const $headings = $("h1");
+  
+  /* 
+    Checking how many &lt;h1&gt;
+    elements were selected.
+  */
+  console.log($headings.length);
+  /* 
+    Console output:
+    An integer that is greater
+    than or equal to zero.
+  */ 
+                  </code>
+                </pre>
+                <p>
+                  If the document contains no
+                  <code class="language-html">&lt;h1&gt;</code> elements, the <code class="language-js">.length</code>
+                  property will return zero. Calling
+                  <code class="language-js">jQuery()</code> will alway return a jQuery
+                  object, however the object will be empty if the provided <code class="language-js">selector</code> does not match any
+                  elements. Checking the <code class="language-js">.length</code>
+                  property is an easy way to verify if the selector expression
+                  successfully matched any elements.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Characteristics of jQuery objects:</h3>
+            <p>
+              Each jQuery object is a unique wrapper around the DOM elements that it contains. No two jQuery objects are equal, even if one was cloned from the other. It is a mistake to assume that two jQuery objects are equivalent based on their <code class="language-js">.length</code> properties or the <code class="language-js">selector</code> expression used to create them. 
+            </p>
+            <ul>
+              <li>
+                <h4>jQuery objects don't update with the DOM:</h4>
+                <p>
+                  A jQuery object represents the matched elements present in the DOM at the time the object was created. Adding or removing DOM elements does not change the collection within the object, even if the added/removed elements match the object's <code class="language-js">selector</code>. A jQuery object may contain more, fewer or even different DOM elements than another object created with the same <code class="language-js">selector</code>.
+                </p>
+                <p>
+                  The below example demonstrates how two jQuery objects created with the same <code class="language-js">selector</code> can contain a different number of elements, due to DOM manipulation that occured between their times of creation.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+   Selecting all &lt;div&gt; 
+   elements in the DOM. 
+  */
+  const $divCollection1 = $('div');
+  
+  /*
+   Removing the last &lt;div&gt;
+   on the page using jQuery's 
+   .remove() method.
+  */
+  $('div:last-of-type').remove();
+
+  /*
+   Selecting all &lt;div&gt; 
+   elements again.
+  */
+  const $divCollection2 = $('div');
+
+  /*                 
+   Comparing the .length property
+   of the two jQuery objects.
+  */
+  console.log($divCollection1.length == $divCollection2.length);
+  /* 
+    Console output: false 
+
+    The .length property of the second object
+    is different from the first, even though
+    they were created with the same selector.
+  */
+                  </code>
+                </pre>
+                <p>
+                  The contents of the first object <code class="language-js">$divCollection1</code> remain the same after the last <code class="language-html">&lt;div&gt;</code> element in the DOM has been removed. Comparing the <code class="language-js">.length</code> property of <code class="language-js">$divCollection1</code> to <code class="language-js">$divCollection2</code> shows that they are not the same size - meaning <code class="language-js">$divCollection1</code> contains a element that <em>no longer exists in the DOM</em>.
+                </p>
+                <p>
+                  This is an important point - jQuery objects can hold elements that do not appear in the DOM. Similarly to how changes in the DOM do not update jQuery objects, DOM elements created with <code class="language-js">jQuery()</code> do not appear in the DOM until they are inserted into the <code class="language-js">document</code>.
+                </p>
+              </li>
+              <li>
+                <h4>jQuery objects don't sort their contents:</h4>
+                <p>
+                  The indexing of DOM elements within a jQuery object matches the order that the elements appeared in the DOM at the time the object was created. Two jQuery objects created with the same <code class="language-js">selector</code> can contain the same DOM elements arranged in a different order.
+                </p>
+                <p>
+                  To demonstrate this, the following example will use the HTML structure of this web page. This page consists of 12 <code class="language-html">&lt;section&gt;</code> elements. Each section has an <code class="language-html">id</code> attribute corresponding to the title of the section. The example will create two jQuery objects containing all the <code class="language-html">&lt;section&gt;</code> elements on the page. The second object will be created after the "Welcome!" section of the page has been moved from its original position in the DOM.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+    Creating a jQuery object of all 
+    the &lt;section&gt; elements before 
+    manipulating the DOM.
+  */
+  const $sectionsBefore = $('section');
+
+  /*
+    Using jQuery's .insertAfter() method 
+    to place the "Welcome!" section  after 
+    the "jQuery Objects" section.
+  */
+  $('#Welcome').insertAfter('#jQuery_Objects');
+
+  /*
+    Creating a jQuery object of all the &lt;section&gt; 
+    elements after manipulating the DOM.
+    Then, comparing its .length property to the
+    .length property of $sectionsBefore.
+  */
+  const $sectionsAfter = $('section');
+  console.log(
+    'Are the .length properties the same? '
+    + ($sectionsBefore.length == $sectionsAfter.length)
+  );
+  /*
+    Console output:
+    Are the .length properties the same? true
+  */
+
+  /*
+    Using jQuery's .index() method to 
+    log the index of "#Welcome" in
+    each object. 
+  */
+  console.log($sectionsBefore.index($('#Welcome')));
+  console.log($sectionsAfter.index($('#Welcome')));
+  /* 
+    Console output: 0 
+    Console output: 6 
+  
+    The "Welcome!" section appears at different
+    indexes in the two jQuery objects.
+  */
+                  </code>
+                </pre>
+                <p>
+                  As can be seen from the example above, no elements were added or removed from the DOM. The two jQuery objects have the same <code class="language-js">.length</code> property and hold references to the same DOM elements, yet changing the position of the "Welcome!" section changed the ordering of the object created after the DOM manipulation.  
+                </p>
+              </li>
+            </ul>
+            <p>
+              Comparing jQuery objects and their properties has limited utility. You will usually need to access a jQuery object's elements directly if you need to make comparisons.
+            </p>
+          </li>
+          <li>
+            <h3>Accessing DOM elements within a jQuery object:</h3>
+            <p>
+              There are several ways to access DOM elements within jQuery objects. The methods differ depending on if you want to access a specific element, a collection of elements or isolate a specific element as a jQuery object.
+            </p>
+            <ul>
+              <li>
+                <h4><code class="language-js">.get()</code>:</h4>
+                <p>
+                  When called on a jQuery object, the <code class="language-js">.get()</code> method takes a positive or negative index as an argument and returns the DOM element at that index. Let's use <code class="language-js">$size</code> to refer to the number of elements within a jQuery object. Positive indexes start at <code class="language-js">0</code> for the first element of the collection and go up to <code class="language-js">$size - 1</code>. Negative indexes step backwards from the last element, starting with <code class="language-js">-1</code> and going down to <code class="language-js">-$size</code>. Any index values outside of these bounds will return <code class="language-js">undefined</code>.
+                </p>
+                <p>
+                  Let's demonstrate this by again using a selection of the 12 <code class="language-html">&lt;section&gt;</code> elements on this page:
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  const $sections = $('section');
+  /* 
+    'size' will be the number of elements
+    within $sections - we know there are 12.
+  */
+  const size = $sections.length;
+
+  /*
+    Index bounds: -$size &lt;= index &lt;= $size - 1
+    
+    Anything outside the bounds is undefined.
+
+    Let's log the id attributes of the  first and last 
+    elements in $sections using postive and negative 
+    indexes expressed in terms of the value of $size. 
+    Let's also log the result of using .get() with 
+    postive and negative indexes that are out of bounds.
+  */
+
+  /*
+    The console.log statements will use the ES6 template
+    literal syntax. Don't confuse the ${} operator of 
+    template literals with the $() of jQuery.
+    Template literals use ${} to enclose an embedded
+    JavaScript expression within a String.
+  */
+  
+  /*
+    Positive indexes: 0 &lt;= index &lt;= $size - 1
+  */
+  console.log(`$size: ${$size}`);
+  console.log(`index: 0, section: ${$sections.get(0).id}`);
+  console.log(`index: $size - 1, section: ${$sections.get($size - 1).id}`);
+  /*
+    Console output:
+    $size: 12
+    index: 0, section: Welcome
+    index: $size - 1, section: Why_Not_jQuery
+  */
+
+  /*
+    Negative indexes: -$size &lt;= index &lt;= - 1
+  */
+  console.log(`$size: ${$size}`);
+  console.log(`index: -1, section: ${$sections.get(-1).id}`);
+  console.log(`index: -$size, section: ${$sections.get(-$size).id}`);
+  /*  
+    Console output:
+    $size: 12
+    index: -1, section: Why_Not_jQuery
+    index: -$size, section: Welcome
+  */
+
+  /*
+    Positive out-of-bounds: index &gt;= $size 
+    Negative out-of-bounds: index &lt;= -$size - 1 
+  */
+  console.log(`$size: ${$size}`);
+  console.log(`index: $size, section: ${$sections.get($size)}`);
+  console.log(`index: -$size - 1, section: ${$sections.get(-$size - 1)}`);
+  /* 
+    Console output:
+    $size: 12
+    index: $size, section: undefined
+    index: -$size - 1, section: undefined
+  */
+
+                  </code>
+                </pre>
+                <p>
+                  Be mindful that the <code class="language-js">.get()</code> method returns the DOM element unwrapped from the jQuery object. You must use native DOM methods to work with the returned element. If you prefer using jQuery object methods, you can use <code class="language-js">jQuery()</code> to wrap the returned element in a jQuery object.
+                </p>
+              </li>
+              <li>
+                <h4><code class="language-js">.toArray()</code>:</h4>
+                <p>
+                  The <code class="language-js">.toArray()</code> method does not require any arguments; it simply returns an <code class="language-js">Array</code> containing all the DOM elements within a jQuery object. This array can then be manipulated using JavaScript <code class="language-js">Array</code> methods.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+    Selecting all the internal links that appear
+    on the page, but not in the nav menu -
+    ie. all the &lt;a&gt; elements with an href 
+    attribute beginning with '#' that appear
+    inside of a &lt;section&gt; element.
+
+    Then, converting the created object's contents to 
+    an array and using the JS method Array.forEach() 
+    to display the array index and the .innerText DOM 
+    property of each link to the console.
+  */                  
+
+  const internalLinksOnPage = $('section a[href^="#"]');
+
+  internalLinksOnPage.toArray().forEach(function(link, index) {
+    console.log(`Link at array[${index}]: ${link.innerText}`);
   });
-          </pre>
-        </code>
-      </section>
-      <section id="DOM_Traversal" class="main-section">
-        <header><h1>DOM Traversal</h1></header>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
+  /*
+    Console output:    
+    Link at array[0]: Learn Some jQuery: jQuery Objects
+    Link at array[1]: Learn Some jQuery: The '$' Sign
+    Link at array[2]: Learn Some jQuery: Selecting Elements
+    Link at array[3]: Learn Some jQuery: Selecting Elements
+  */
+                  </code>
+                </pre>
+                <p>
+                  Note that after selecting elements using <code class="language-js">jQuery(selector)</code>, the example converts the created jQuery object's contents into a JavaScript <code class="language-js">Array</code> and then uses JavaScript methods. It's not uncommon to see jQuery and JavaScript methods used together. If you're wondering whether the same selection can be made with pure JavaScript - it can! The DOM method <code class="language-js">.querySelectorAll()</code> can take any valid CSS selector as its argument. This returns a <code class="language-js">NodeList</code> of the matched elements, which is very similar to an <code class="language-js">Array</code> and can be iterated through using the <code class="language-js">.forEach()</code> method.
+                </p>
+              </li>
+              <li>
+                <h4>Array subscripting:</h4>
+                <p>
+                  jQuery objects possess some <code class="language-js">Array</code>-like behaviour, including array subscripting. Similar to a JavaScript <code class="language-js">Array</code>, you can use bracket notation to access an element by its index within a jQuery object. As a consequence, array subscripting lacks the negative-indexing capability of the <code class="language-js">.get()</code> method. Using a negative index will return <code class="language-js">undefined</code>.
+                </p>
+                <p>
+                  Consider a generic jQuery object named <code class="language-js">$object</code>. Instead of getting the last element by using <code class="language-js">$object[-1]</code>, you would have to use the <code class="language-js">.length</code> property - ie. <code class="language-js">$object[$object.length - 1]</code>. This is a lot more verbose than using <code class="language-js">$object.get(-1)</code> to retrieve the last element.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  const $sections = $('section');
+
+  /*
+    Accessing the first and last elements of
+    $sections using array subscripting.
+  */                  
+  console.log(`Index: 0, section: ${$sections[0].id}`);
+  console.log(
+    `Index: ${$sections.length - 1}, section: ${
+      $sections[$sections.length - 1].id
+    }`
+  );
+  /*
+    Console output:
+    Index: 0, section: Welcome
+    Index: 11, section: Why_Not_jQuery
+  */
+                  </code>
+                </pre>
+                <p>
+                  Array subscripting returns the DOM element at the specified index. Using DOM methods are required for working directly with the returned element. Once again, if you prefer using jQuery object methods, you can wrap the element by using <code class="language-js">jQuery()</code>. 
+                </p>
+              </li>
+              <li>
+                <h4><code class="language-js">.eq()</code>:</h4>
+                <p>
+                  Using <code class="language-js">.get()</code> or array subscripting lets you extract a specific element from a jQuery object, but what if you want to use jQuery object methods instead of native DOM methods? It's possible to re-wrap the element with <code class="language-js">jQuery()</code>, but a quicker way is to use the <code class="language-js">.eq()</code> method.
+                </p>
+                <p>
+                  Similarly to <code class="language-js">.get()</code>, the <code class="language-js">.eq()</code> method takes a positive or negative zero-based index as its argument. However, instead of returning the DOM element itself, <code class="language-js">.eq()</code> returns a new jQuery object containing only the element at the specified index. jQuery object methods can be immediately used without having to call <code class="language-js">jQuery()</code>. Let's use the <code class="language-js">.jquery</code> property in an example to confirm this.
+                </p>
+                <pre class="limited-handles">
+                  <code class="language-js">
+  /*
+    Selecting every link on the page that
+    links to an outside location - 
+    ie. every &lt;a&gt; element that does NOT 
+    have an href attribute beginning with '#'.
+
+    Then, reducing the collection to a jQuery
+    object containing the first element only
+    and logging its .jquery property.
+  */
+  const $linksToOutside = $('a:not(a[href^="#"])');
+  console.log($linksToOutside.eq(0).jquery);
+  /*
+    Console output: 3.4.1
+
+    Recall that the .jquery property returns the 
+    jQuery version number if the object is a jQuery
+    object, otherwise it returns 'undefined'.
+  */
+                  </code>
+                </pre>
+                <p>
+                  Unlike <code class="language-js">.get()</code>, calling <code class="language-js">.eq()</code> with an out-of-bounds index does not return <code class="language-js">undefined</code>. The <code class="language-js">.eq()</code> method is actually a filtering method and so will return an empty jQuery object with a length property of zero. In jQuery, filtering methods return an empty object if no element matches their filter condition. In this case, the method filters for any element at the specified index. For more information about jQuery's filtering methods, visit <a href="https://api.jquery.com/category/traversing/filtering/" title="The jQuery documentation for filtering methods." target="_blank" rel="noreferrer">jQuery's API documentation for filtering</a>.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Iterating over jQuery objects:</h3>
+            <p>
+              We just looked at jQuery's <code class="language-js">.toArray()</code> method, which returns an array of DOM elements that can be manipulated using JavaScript <code class="language-js">Array</code> methods. If you're using <code class="language-js">.toArray()</code> so that you can iterate through the elements, you can actually use jQuery's <code class="language-js">.each()</code> method. The method takes a jQuery object and executes a callback function on each element in the collection. The DOM element is unwrapped from the object within the body of the callback function, JavaScript methods can be used without conversion. The keyword <code class="language-js">this</code> will allow you to access the current element of the iteration. Take a look at the example below.
+            </p>
+            <pre class="limited-handles">
+              <code class="language-js">
+  /*
+    Selecting each &lt;h1&gt; element on
+    the page and iterating through them.
+  */              
+  $('h1').each(function() {
+    // Uppercasing each &lt;h1&gt; element's text.
+    this.innerText = this.innerText.toUpperCase();
+  });              
+              </code>
+            </pre>
+            <p>
+              Note how inside the callback function, the native DOM property <code class="language-js">HTMLElement.innerText</code> and the JavaScript method <code class="language-js">String.toUpperCase()</code> are used instead of jQuery methods. This is because the <code class="language-js">.each()</code> method returns each element of the collection as itself - ie. as a DOM element unwrapped from the jQuery object. Thus, native methods are required. You may want to wrap the current element of iteration within a jQuery object so that you can use jQuery methods. This can be done by calling <code class="language-js">jQuery()</code> with the <code class="language-js">this</code> keyword as its argument.
+            </p>
+            <p>
+              You might also want to access the index of the element currently being iterated. The <code class="language-js">.each()</code> method automatically passes the index of the current element to the callback function. You can access this index if you name a parameter in the callback function's arguments and use that parameter name to refer to the index.
+            </p>
+            <p>
+              The following example will demonstrate using the index of the current element and wrapping the current element in a jQuery object. 
+            </p>
+            <pre class="limited-handles">
+              <code class="language-js">
+  /*
+    Selecting each &lt;a&gt; element on
+    the page and iterating through them,
+    as well as naming a parameter to use
+    for referring to the current index.
+  */              
+  $('a').each(function(index) {
+    /*
+     Wrapping each &lt;a&gt; element in a jQuery
+     object and getting its href attribute 
+     using jQuery's .attr() method.
+     Then, using the index to log the link's
+     number on the page and its href attribute 
+     to the console using ES6 template string syntax.
+    */
+    const $url = $(this).attr('href');
+    console.log(`Link ${index + 1}: ${$url}`);
   });
-          </pre>
-        </code>
+  
+  /*
+    Console output:
+    Link 1: href of first &lt;a&gt; element on page...
+    Link 2: href of second element...
+    Link 3: ...
+    .
+    .
+    .
+  */
+              </code>
+            </pre>
+          </li>
+          <li>
+            <h3>Changing jQuery objects</h3>
+          </li>
+          <li>
+            <h3>Method chaining</h3>
+          </li>
+          <li>
+            <h3>Manipulating multiple elements:</h3>
+          </li>
+          <li>
+            <h3>Changing jQuery objects:</h3>
+            <p>
+              Most method calls on a jQuery object will return the same object.
+              However, calling method like
+              <code class="language-js">.filter()</code> have the potential to
+              change the set of elements within the object. Methods such as this
+              will return a new jQuery object with the result of the method
+              call.
+            </p>
+          </li>
+        </ul>
       </section>
       <section id="Selecting_Elements" class="main-section">
         <header><h1>Selecting Elements</h1></header>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
-  });
-          </pre>
-        </code>
+        CSS selectors
+        jQuery-specific selectors
+        Traversing the dom to select other elements based off a current selection
       </section>
-      <section id="Animations" class="main-section">
-        <header><h1>Animations</h1></header>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
-  });
-          </pre>
-        </code>
+      <section id="CSS_and_Animations" class="main-section">
+        <header><h1>CSS & Animations</h1></header>
       </section>
       <section id="Event_Handling" class="main-section">
         <header><h1>Event Handling</h1></header>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
-        </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
-  });
-          </pre>
-        </code>
       </section>
       <section id="AJAX" class="main-section">
         <header><h1>AJAX</h1></header>
+      </section>
+      <section id="Why_Not_jQuery" class="main-section">
+        <header><h1>Why Not jQuery?</h1></header>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-          omnis maiores ut excepturi eum, in enim dolorem, incidunt a facilis
-          repellendus nulla odio. Nemo rerum deleniti quaerat recusandae
-          temporibus sit!
+          Speed concerns - native DOM methods are faster
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error
-          asperiores, beatae deserunt dolores, tempora pariatur praesentium
-          officiis excepturi esse rerum temporibus mollitia ipsum quos. Qui
-          officiis aut natus dolorem!
+          Not good to have unnecessary dependencies
+          Microlibraries like axios can give only the functionality needed, instead of large libraries that include everything.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          exercitationem earum quae perferendis voluptas? Hic eligendi rerum
-          voluptatum praesentium. Natus, error sint repudiandae eos id tenetur
-          perferendis molestias ad atque.
+          Difficulty maintaining code
         </p>
-        <code class="code-block">
-          <pre>
-  $(document).ready(function(){
-    $("button").click(function(){
-        $("div").animate({height:"toggle"}).append("hi");
-    });
-  });
-          </pre>
-        </code>
+        <p>
+          Modern front-end libraries like react & angular take away need to
+          manipulate the DOM directly
+        </p>
+        <p>
+          Evergreen browsers - less need to support old versions of internet
+          explorer
+        </p>
+        <p>
+          Polyfills - polyfill.io
+        </p>
       </section>
     </main>
     <footer><span>kpsiDev</span><span>&nbsp;&copy; 2019</span></footer>
 
-    <!-- <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="/jqueryTest/test.js"></script> -->
+    <!-- Prism JS syntax highlighting scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/components/prism-core.min.js"
+      integrity="sha256-Y+Budm2wBEjYjbH0qcJRmLuRBFpXd0VKxl6XhdS4hgA="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-ht8ay6ZTPZfuixYB99I5oRpCLsCq7Do2LjEYLwbe+X8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery testing js -->
+    <script defer src="node_modules/jquery/dist/jquery.js"></script>
+    <script defer src="jqueryTest/test.js"></script>
   </body>
 </html>
